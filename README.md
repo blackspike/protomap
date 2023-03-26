@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+# Protomap test
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is just a test project trying out the amazing [protomaps](https://protomaps.com)
 
-## Recommended IDE Setup
+This demo plots all the pubs in Brighton & Hove – the entire map is /public/brighton-hove.pmtiles - just 2mb!
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+`npm i && npm run dev`
