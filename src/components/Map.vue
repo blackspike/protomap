@@ -41,20 +41,6 @@ onMounted(() => {
 
   map.value.addControl(new maplibregl.NavigationControl(), 'top-right')
 
-  // // create the popup
-  // const popup = new maplibregl.Popup({ offset: 25 }).setText(
-  //   'Hello i am a popup'
-  // )
-
-  // // popup marker
-  // new maplibregl.Marker({ color: '#ff00ff' })
-  //   .setLngLat([initialState.lng, initialState.lat])
-  //   .setPopup(popup)
-  //   .addTo(map.value)
-
-
-  // pubs
-  //   { "name": "Lord Nelson Inn", "id": 67, "verified_1": null, "address_1": "36 Trafalgar Street", "address_2": "Brighton", "lat": 50.8283239, "lng": -0.1390587, "type": "drink" }
   pubs.map(pub => {
 
     const popDiv = document.createElement('div')
@@ -66,17 +52,12 @@ onMounted(() => {
     popDiv.append(popTitle, popLink)
     const popup = new maplibregl.Popup({ offset: 25 }).setDOMContent(popDiv)
 
-    // popTitle.addEventListener('click', function () {
-    //   window.location =
-    // })
-
-    // create a DOM element for the marker
     const el = document.createElement('div')
     el.className = 'marker'
     el.innerText = '🍺'
     el.style.fontSize = '24px'
-    el.style.width = 40 + 'px'
-    el.style.height = 40 + 'px'
+    el.style.width = '24px'
+    el.style.height = '24px'
 
     new maplibregl.Marker(el)
       .setLngLat([pub.lng, pub.lat])
@@ -85,15 +66,10 @@ onMounted(() => {
   })
 
 })
-  // onUnmounted(() => {
-  //   map.value?.remove()
-  // })
 
 </script>
 
 <style lang="scss" scoped>
-// @import './maplibre-gl/dist/maplibre-gl.css';
-
 .map-wrap {
   outline: 2px dotted orangered;
   position: relative;
