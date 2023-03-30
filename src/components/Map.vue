@@ -31,11 +31,12 @@ onMounted(() => {
       sources: {
         "protomaps": {
           type: "vector",
+          // url: "pmtiles://http://localhost:5173/brighton-hove.pmtiles",
           url: "pmtiles://https://protomaps-pubs.netlify.app/brighton-hove.pmtiles",
           attribution: '<a href="https://protomaps.com">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>'
         }
       },
-      layers: layers("protomaps", "light")
+      layers: layers("protomaps", "black")
     }
   })
 
@@ -55,9 +56,6 @@ onMounted(() => {
     const el = document.createElement('div')
     el.className = 'marker'
     el.innerText = '🍺'
-    el.style.fontSize = '24px'
-    el.style.width = '24px'
-    el.style.height = '24px'
 
     new maplibregl.Marker(el)
       .setLngLat([pub.lng, pub.lat])
@@ -95,14 +93,45 @@ onMounted(() => {
 
 .mapboxgl-popup-content {
   color: #222;
+  background-color: #ffd000;
+}
+
+.mapboxgl-popup-content a {
+  color: #fff;
+  border-radius: .5rem;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .6rem;
+  text-decoration: none;
+  padding: .25rem .5rem;
+  margin-block-start: .5rem;
+  background-color: #222;
+  display: inline-flex;
+}
+
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: #ffd000;
+}
+
+.maplibregl-popup-anchor-top .maplibregl-popup-tip {
+  border-bottom-color: #ffd000;
 }
 
 .marker {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   padding: 0;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: 2px solid #ffd000;
+  background-color: #000;
 }
 
 h3 {
