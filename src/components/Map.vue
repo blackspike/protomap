@@ -33,7 +33,7 @@ onMounted(() => {
         "protomaps": {
           type: "vector",
           // url: "pmtiles://http://localhost:5173/brighton-hove.pmtiles",
-          url: "pmtiles://https://brighton.pub/brighton-hove.pmtiles",
+          url: "pmtiles://https://www.brighton.pub/brighton-hove.pmtiles",
           attribution: '<a href="https://protomaps.com">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>'
         }
       },
