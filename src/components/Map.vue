@@ -19,12 +19,13 @@ const map = ref(null)
 
 onMounted(() => {
 
-  const initialState = { lat: 50.835351, lng: -0.147776, zoom: 13 }
+  const initialState = { lat: 50.824351, lng: -0.137776, zoom: 14, minZoom: 13, }
 
   map.value = new maplibregl.Map({
     container: mapContainer.value,
     center: [initialState.lng, initialState.lat],
     zoom: initialState.zoom,
+    minZoom: initialState.minZoom,
     style: {
       version: 8,
       glyphs: 'https://cdn.protomaps.com/fonts/pbf/{fontstack}/{range}.pbf',
